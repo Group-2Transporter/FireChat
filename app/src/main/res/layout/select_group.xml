@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    app:ignore="NamespaceTypo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll"
+        android:gravity="center"
+        android:background="@drawable/border_white_layout"
+        android:weightSum="1"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="7dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/civProfile"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/white"/>
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll2"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mail"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/tvUserStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:visibility="invisible"
+                android:text="Online status"
+                android:id="@+id/tvOnlineStatus"/>
+        </LinearLayout>
+        <ImageView
+            android:padding="7dp"
+            android:visibility="invisible"
+            android:id="@+id/checkGreen"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:src="@drawable/checkimg"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

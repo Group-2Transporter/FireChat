@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/ivStatus"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        android:layout_alignParentBottom="true"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.8"
+            android:padding="10dp"
+            android:id="@+id/etText"
+            android:hint="Add caption"
+            />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/send"
+            android:layout_weight="0.2"
+            android:id="@+id/btnSend"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/ActonBarColor"
+            />
+    </LinearLayout>
+
+
+</RelativeLayout>

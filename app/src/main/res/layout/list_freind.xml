@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    app:ignore="NamespaceTypo">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll"
+        android:gravity="center"
+        android:background="@drawable/border_white_layout"
+        android:weightSum="1"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="7dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+        <RelativeLayout
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            >
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:src="@mipmap/ic_launcher"
+                android:id="@+id/ListCircleImage"
+                app:civ_border_width="4dp"
+                app:civ_border_color="@color/white"/>
+            <ImageView
+                android:layout_toLeftOf="@id/ListCircleImage"
+                android:layout_marginRight="-20dp"
+                android:layout_marginTop="-20dp"
+                android:layout_below="@id/ListCircleImage"
+                android:visibility="invisible"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:src="@drawable/greencolour"
+                android:id="@+id/imgOnlineStatus"
+                android:layout_gravity="left"/>
+
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_weight="0.65"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll2"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:id="@+id/Listmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mail"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/ListStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:text="Online status"
+                android:id="@+id/tvOnlineStatus"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="0.11"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="1"
+            >
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"/>
+
+            <Button
+                android:layout_marginLeft="3dp"
+                android:id="@+id/btnCounter"
+                android:visibility="gone"
+                android:layout_width="30dp"
+                android:layout_height="0dp"
+                android:layout_weight="0.45"
+                android:padding="2dp"
+                android:background="@drawable/button_message_counter"
+                android:text="10"
+                android:textColor="@color/white"
+                />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/search"
+        android:title="Search"
+        android:icon="@drawable/search"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="android.widget.SearchView" />
+    <item android:id="@+id/findFriend"
+        android:title="Find Friends"/>
+    <item android:id="@+id/group"
+    android:title="New Group"/>
+    <item android:id="@+id/updateProfile"
+        android:title="UpdateProfile"/>
+    <item android:id="@+id/signOut"
+        android:title="Sign Out"/>
+    <item android:id="@+id/delete"
+        android:title="Delete Account"/>
+</menu>

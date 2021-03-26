@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:aandroid="http://schemas.android.com/tools">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ActonBarColor"
+        android:id="@+id/sendToolBar"/>
+    <LinearLayout
+        android:layout_below="@id/sendToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="vertical"
+        android:background="@color/ActonBarColor"
+        android:id="@+id/v">
+        <TextView
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_marginTop="23dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tanveer"
+            android:padding="10dp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:id="@+id/tvName"
+            />
+
+
+
+    </LinearLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/sendCircleImage"
+        android:layout_below="@+id/v"
+        app:civ_border_width="4dp"
+        app:civ_border_color="@color/white"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-100dp"/>
+
+    <TextView
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hi I Am Using Fun Chat"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:background="@drawable/border_edit_profile"
+        android:textSize="18sp"
+        android:id="@+id/tvStatus"
+        android:layout_below="@id/sendCircleImage"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:text="Send Request"
+        android:background="@drawable/border_button"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:layout_marginRight="30dp"
+        android:id="@+id/btnSendRequest"
+        android:layout_below="@id/tvStatus"
+        />
+
+    <Button
+        android:id="@+id/btnSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvStatus"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="30dp"
+        android:text="message"
+        android:background="@drawable/border_button"
+        android:textColor="@color/white" />
+</RelativeLayout>

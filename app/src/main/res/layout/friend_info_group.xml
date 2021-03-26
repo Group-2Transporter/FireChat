@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ll"
+        android:gravity="center"
+        android:weightSum="1"
+        android:paddingTop="10dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="7dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/ListCircleImage"
+            app:civ_border_width="4dp"
+            app:civ_border_color="@color/white"/>
+        <LinearLayout
+            android:layout_weight="0.7"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll2"
+            android:orientation="vertical">
+            <TextView
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:textAllCaps="true"
+                android:id="@+id/Listmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mail"
+                android:textSize="20sp"
+                android:layout_marginLeft="10dp"
+                />
+            <TextView
+                android:id="@+id/ListStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Status"
+                android:textSize="18sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:weightSum="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.1"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.3"
+                android:src="@drawable/star"
+                android:id="@+id/imgStar"
+                android:visibility="gone"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <View
+        android:layout_marginLeft="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/ActonBarColor"
+        android:layout_below="@id/ll"
+        />
+
+
+
+</RelativeLayout>

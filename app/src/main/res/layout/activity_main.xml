@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ActonBarColor"
+        android:id="@+id/mainToolBar">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/mainImage"
+        />
+        <TextView
+            android:gravity="center_vertical"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Fun Chat"
+            android:layout_toRightOf="@id/mainImage"
+            android:id="@+id/funChat"/>
+
+
+
+    </RelativeLayout>
+
+
+        
+    </androidx.appcompat.widget.Toolbar>
+    <com.google.android.material.tabs.TabLayout
+        android:layout_below="@id/mainToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/ActonBarColor"
+        app:tabTextColor="@color/white"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="5dp"
+        app:tabIndicatorColor="@color/white"
+        android:id="@+id/mainTabLayout"/>
+    <androidx.viewpager.widget.ViewPager
+        android:layout_below="@id/mainTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/mainViewPager"/>
+
+</RelativeLayout>
