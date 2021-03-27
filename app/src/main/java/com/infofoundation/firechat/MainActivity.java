@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
     CircleImageView mainImage;
     TextView tvFunChat;
     DatabaseReference statusReference,contactsReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
