@@ -1,76 +1,96 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="?attr/actionBarSize"
         android:background="@color/ActonBarColor"
-        android:id="@+id/v"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/circleImage"
-        android:layout_below="@+id/v"
-        app:civ_border_width="4dp"
-        app:civ_border_color="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-100dp"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/camera"
-        android:id="@+id/circleImageIcon"
-        android:layout_below="@+id/circleImage"
-        app:civ_border_width="4dp"
-        app:civ_border_color="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-25dp"/>
-    <EditText
+        app:title="Create profile"
+        app:titleTextColor="@color/white" />
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Name"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/border_edit_profile"
-        android:textSize="18sp"
-        android:id="@+id/etName"
-        android:layout_below="@id/circleImage"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hi I Am Using Fun Chat"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/border_edit_profile"
-        android:textSize="18sp"
-        android:id="@+id/etStatus"
-        android:layout_below="@id/etName"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:text="UPDATE"
-        android:background="@drawable/border_button"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:layout_marginRight="30dp"
-        android:id="@+id/btnUpdateProfile"
-        android:layout_below="@id/etStatus"
-        android:layout_marginBottom="10dp"
-        />
-</RelativeLayout>
-</ScrollView>
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImage"
+            android:layout_width="230dp"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:paddingTop="30dp"
+            app:civ_border_color="@color/ActonBarColor"
+            android:src="@drawable/ic_launcher_background" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/circleImageIcon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginRight="-40dp"
+            android:layout_marginTop="-40dp"
+            android:backgroundTint="@color/ActonBarColor"
+            app:backgroundTint="@color/ActonBarColor"
+            android:src="@drawable/camera" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:orientation="vertical"
+            android:background="@drawable/create_profile_border"
+            android:padding="10dp">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="15dp"
+                    android:id="@+id/etName"
+                    android:textColor="@color/ActonBarColor"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:textColorHint="@color/ActonBarColor"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Your Name"
+                    android:background="@color/white"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:textColor="@color/ActonBarColor"
+                    android:layout_margin="15dp"
+                    android:textCursorDrawable="@drawable/text_cursor"
+                    android:textColorHint="@color/ActonBarColor"
+                    android:id="@+id/etStatus"
+                    android:layout_height="wrap_content"
+                    android:hint="Please Enter Your Status"
+                    android:background="@color/white"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:id="@+id/btnUpdateProfile"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="6dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:text="SAVE"
+                    android:textColor="@color/ActonBarColor"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
