@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +28,7 @@ import com.google.firebase.storage.UploadTask;
 import com.infofoundation.firechat.MainActivity;
 import com.infofoundation.firechat.R;
 import com.infofoundation.firechat.beans.User;
+import com.infofoundation.firechat.databinding.UpdateProfileSettingBinding;
 import com.squareup.picasso.Picasso;
 
 import com.theartofdev.edmodo.cropper.CropImage;
@@ -39,30 +39,28 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class UpdateProfile extends AppCompatActivity {
-    EditText etName,etStatus;
-    Button btnUpdateProfile;
-    CircleImageView circleImage,btnImage;
     DatabaseReference reference;
     String currentUserId;
     User user;
     ProgressDialog pd;
     StorageReference storageReference;
+    UpdateProfileSettingBinding binding;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.update_profile_setting);
-        initComponent();
+        binding = UpdateProfileSettingBinding.inflate(LayoutInflater.from(this));
+        setContentView(binding.getRoot());
         reference = FirebaseDatabase.getInstance().getReference().child("Users");
         currentUserId = FirebaseAuth.getInstance().getUid();
         dataRetrieveStatus();
         storageReference = FirebaseStorage.getInstance().getReference().child("Profile Image");
-        btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
+        binding.btnUpdateProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userName = etName.getText().toString();
-                String status = etStatus.getText().toString();
+                String userName = binding.etName.getText().toString();
+                String status = binding.etStatus.getText().toString();
                 if(TextUtils.isEmpty(userName)){
-                    etName.setError("Please Enter Name");
+                    binding.etName.setError("Please Enter Name");
                     return;
                 }
                 if(TextUtils.isEmpty(status)){
@@ -95,7 +93,7 @@ public class UpdateProfile extends AppCompatActivity {
                 });
             }
         });
-        btnImage.setOnClickListener( new View.OnClickListener() {
+        binding.circleImageIcon.setOnClickListener( new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CropImage.activity()
@@ -113,9 +111,9 @@ public class UpdateProfile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists()){
                     user = snapshot.getValue(User.class);
-                    etName.setText(user.getName());
-                    etStatus.setText(user.getStatus());
-                    Picasso.get().load(user.getImgUri()).placeholder(R.drawable.logo).into(circleImage);
+                    binding.etName.setText(user.getName());
+                    binding.etStatus.setText(user.getStatus());
+                    Picasso.get().load(user.getImgUri()).placeholder(R.drawable.logo).into(binding.circleImage);
                 }
             }
 
@@ -150,7 +148,7 @@ public class UpdateProfile extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         pd.dismiss();
                                         if(task.isSuccessful()){
-                                            circleImage.setImageURI(imageUri);
+                                            binding.circleImage.setImageURI(imageUri);
                                             Toast.makeText(UpdateProfile.this, "Successfully Updated", Toast.LENGTH_SHORT).show();
                                         }
                                         else {
@@ -169,14 +167,5 @@ public class UpdateProfile extends AppCompatActivity {
                 pd.dismiss();
             }
         }
-    }
-
-    private void initComponent() {
-        etName = findViewById(R.id.etName);
-        etStatus = findViewById(R.id.etStatus);
-        circleImage = findViewById(R.id.circleImage);
-        btnUpdateProfile = findViewById(R.id.btnUpdateProfile);
-        btnImage = findViewById(R.id.circleImageIcon);
-       // getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
