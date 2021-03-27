@@ -1,76 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-    <View
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:background="@color/ActonBarColor"
-        android:id="@+id/v"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/circleImage"
-        android:layout_below="@+id/v"
-        app:civ_border_width="4dp"
-        app:civ_border_color="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-100dp"/>
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/camera"
-        android:id="@+id/circleImageIcon"
-        android:layout_below="@+id/circleImage"
-        app:civ_border_width="4dp"
-        app:civ_border_color="@color/white"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="-25dp"/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter Your Name"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/border_edit_profile"
-        android:textSize="18sp"
-        android:id="@+id/etName"
-        android:layout_below="@id/circleImage"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Hi I Am Using Fun Chat"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:background="@drawable/border_edit_profile"
-        android:textSize="18sp"
-        android:id="@+id/etStatus"
-        android:layout_below="@id/etName"
-        />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:text="UPDATE"
-        android:background="@drawable/border_button"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        android:layout_marginRight="30dp"
-        android:id="@+id/btnUpdateProfile"
-        android:layout_below="@id/etStatus"
-        android:layout_marginBottom="10dp"
-        />
-</RelativeLayout>
+        android:layout_height="match_parent">
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/ActonBarColor" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_below="@+id/v"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-100dp"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="4dp" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/circleImage"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-25dp"
+            android:src="@drawable/camera"
+            app:civ_border_color="@color/white"
+            app:civ_border_width="4dp" />
+
+        <EditText
+            android:id="@+id/etName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/circleImage"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/border_white"
+            android:elevation="5dp"
+            android:hint="Enter Your Name"
+            android:padding="10dp"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/etStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etName"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="Hi I Am Using Fun Chat"
+            android:textSize="18sp"
+            android:elevation="5dp"/>
+
+        <Button
+            android:id="@+id/btnUpdateProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/etStatus"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/border_button"
+            android:padding="5dp"
+            android:text="UPDATE"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
+    </RelativeLayout>
 </ScrollView>
