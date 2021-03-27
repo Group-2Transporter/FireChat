@@ -62,15 +62,7 @@ public class FragmentChats extends Fragment {
             rv.setAdapter(adapter);
             rv.setLayoutManager(new LinearLayoutManager(getContext()));
             adapter.startListening();
-        }else{
-           sendUserToLoginActivity();
         }
-    }
-
-    private void sendUserToLoginActivity() {
-        Intent loginActivity = new Intent(getContext(), LoginActivity.class);
-        loginActivity.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK|Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        startActivity(loginActivity);
     }
 
     @Override
